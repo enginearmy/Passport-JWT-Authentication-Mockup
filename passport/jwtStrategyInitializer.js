@@ -15,13 +15,13 @@ const jwtStrategyOptions = {
 
 //Define functionality of jwt-strategy and how the token will be used to authenticate
 const jwtStrategy = 
-    new Strategy(jwtStrategyOptions, (jwt_payload, done) => {
+    new Strategy(jwtStrategyOptions, (decoded_jwt_payload, done) => {
 
-        if(jwt_payload){
-            console.log(`SUCCESS ===> Payload: ${jwt_payload.name}`)
-            done(null, jwt_payload)
-        }else{
-            throw new Error("JWT-Strategy did not find a jwt_payload!")
+        //Usually we would use the decoded_jwt_payload here to look up a user or something more significant
+        //In this case we just pass it along to the next middleware
+        if(decoded_jwt_payload){
+            console.log(`SUCCESS ===> Payload: ${decoded_jwt_payload.name}`)
+            done(null, decoded_jwt_payload)
         }
     })
 
