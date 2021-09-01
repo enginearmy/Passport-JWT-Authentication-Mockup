@@ -19,6 +19,10 @@ app.post('/login', loginUser, (req, res, next) => {
 })
 
 
+app.get('/', (req, res) => {
+    res.send(<h1>Simple Express API - Passport App</h1>)
+})
+
 app.get('/protected/data', passport.authenticate('jwt', {session: false}), (req, res) => {
     res.status(200).json({
         message: 'YOu GOT THE DATA!'
