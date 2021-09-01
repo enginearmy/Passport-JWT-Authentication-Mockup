@@ -5,9 +5,13 @@ import passport from 'passport'
 import jwtStrategyInitializer from './passport/jwtStrategyInitializer.js'
 
 import loginUser from './auth/loginUser.js'
+import path from 'path'
+
+console.log(dirname)
 
 const app = express();
 app.use(passport.initialize())
+app.use(express.static('public'))
 jwtStrategyInitializer(passport);
 
 app.post('/login', loginUser, (req, res, next) => {
@@ -19,8 +23,10 @@ app.post('/login', loginUser, (req, res, next) => {
 })
 
 
+const moduleURL = new URL(import.meta.url)
+const dirname = path.dirname(moduleURL.pathname)
 app.get('/', (req, res) => {
-    res.send(<h1>Simple Express API - Passport App</h1>)
+    res.sendFile(path.join(dirname, '/index.html'))
 })
 
 app.get('/protected/data', passport.authenticate('jwt', {session: false}), (req, res) => {
