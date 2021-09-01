@@ -19,3 +19,27 @@ const mockExtractor = (req) => {
     return testToken
 }
 
+opts.jwtFromRequest = ExtractJwt.fromAuthHeaderAsBearerToken();
+opts.secretOrKey = 'secret';
+
+
+const jwtStrategyOptions = {
+    jwtFromRequest = mockExtractor,
+    secretOrKey = JWT_SECRET
+}
+
+
+const jwtStrategy = new JwtStrategy(
+
+    jwtStrategyOptions, (jwt_payload, done) => {
+        if(err){
+            return done(err, false)
+        }
+        if(user){
+
+        }
+    }
+)
+
+
+passport.use(new JwtStrategy)
