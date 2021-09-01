@@ -13,4 +13,9 @@ const user = {
 
 const testToken = JWT.sign(user, JWT_SECRET)
 
-console.log(testToken)
+
+//Mock getting a token from a req
+const mockExtractor = (req) => {
+    return testToken
+}
+
