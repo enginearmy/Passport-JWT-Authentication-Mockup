@@ -1,12 +1,13 @@
 {
-  "name": "Passport-Authentication-Mockup",
+  "name": "passport_authentication_mockup",
   "version": "1.0.0",
   "description": "Practice mockup of Passport.js and express",
   "main": "server.js",
   "author": "Steve Hamilton <steve@enginearmy.com>",
   "license": "MIT",
   "dependencies": {
-    "passport": "^0.4.1"
+    "passport": "^0.4.1",
+    "passport-local": "^1.0.0"
   },
   "scripts": {
     "start": "node server.js"
