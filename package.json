@@ -4,5 +4,11 @@
   "description": "Practice mockup of Passport.js and express",
   "main": "server.js",
   "author": "Steve Hamilton <steve@enginearmy.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "passport": "^0.4.1"
+  },
+  "scripts": {
+    "start": "node server.js"
+  }
 }
