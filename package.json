@@ -1,0 +1,8 @@
+{
+  "name": "Passport-Authentication-Mockup",
+  "version": "1.0.0",
+  "description": "Practice mockup of Passport.js and express",
+  "main": "server.js",
+  "author": "Steve Hamilton <steve@enginearmy.com>",
+  "license": "MIT"
+}
