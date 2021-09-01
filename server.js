@@ -4,12 +4,25 @@ import express from 'express'
 import passport from 'passport'
 import jwtStrategyInitializer from './passport/jwtStrategyInitializer.js'
 
+import loginUser from './auth/loginUser.js'
+
 const app = express();
 app.use(passport.initialize())
 jwtStrategyInitializer(passport);
 
-app.get('/', passport.authenticate('jwt', {session: false}), (req, res) => {
-    console.log(req.user.name)
+app.post('/login', loginUser, (req, res, next) => {
+    console.log(`Controller Has: ${res.token}`)
+    res.json({
+        name: 'Billy',
+        token: res.token
+    })
+})
+
+
+app.get('/protected/data', passport.authenticate('jwt', {session: false}), (req, res) => {
+    res.status(200).json({
+        message: 'YOu GOT THE DATA!'
+    })
 })
 
 
