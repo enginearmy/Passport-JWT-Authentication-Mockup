@@ -32,3 +32,7 @@ Start the server with
 ### To Use the Server
 - Make a request to the loginUser route ( Using something like Postman)
 - Make a request to the /protected/data route and include the token that  was returned from the login request
+
+
+## Deployed To Heroku
+<a href="https://passport-jwt-authenticatio.herokuapp.com">https://passport-jwt-authenticatio.herokuapp.com/</a>
