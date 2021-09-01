@@ -13,9 +13,9 @@ const jwtStrategyOptions = {
 }
 
 
-//Define how the token will be processed and used for authentication
-const jwtStrategy = () => {
-    return new Strategy(jwtStrategyOptions, (jwt_payload, done) => {
+//Define functionality of jwt-strategy and how the token will be used to authenticate
+const jwtStrategy = 
+    new Strategy(jwtStrategyOptions, (jwt_payload, done) => {
 
         if(jwt_payload){
             console.log(`SUCCESS ===> Payload: ${jwt_payload.name}`)
@@ -24,10 +24,10 @@ const jwtStrategy = () => {
             throw new Error("JWT-Strategy did not find a jwt_payload!")
         }
     })
-}
 
 //Add the strategy to passport
-const jwtStrategyInitializer = (passport) => 
+const jwtStrategyInitializer = (passport) =>
     passport.use(jwtStrategy);
+
 
 export default jwtStrategyInitializer;
