@@ -7,7 +7,6 @@ import jwtStrategyInitializer from './passport/jwtStrategyInitializer.js'
 import loginUser from './auth/loginUser.js'
 import path from 'path'
 
-console.log(dirname)
 
 const app = express();
 app.use(passport.initialize())
