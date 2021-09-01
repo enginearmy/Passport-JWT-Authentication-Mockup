@@ -5,7 +5,9 @@
 ![Whale Tail](https://images.unsplash.com/photo-1570913179118-f3d24be1d1f7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1113&q=80)
 
 ## Motivation
-Work through setting up a simple authentication workflow for an express app.  Nothing fancy just the basics. dotenv was used to supply the JWT_SECRET so you will need to impolement that as well.Using a few packages:
+Work through setting up a simple authentication workflow for an express app.  Nothing fancy just the basics. dotenv was used to supply the JWT_SECRET so you will need to implement that as well.
+
+### Core Packages:
 
 ```
 yarn add express
